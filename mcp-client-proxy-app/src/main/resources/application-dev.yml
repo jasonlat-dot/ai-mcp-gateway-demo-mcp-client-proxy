@@ -1,0 +1,25 @@
+server:
+  port: 8771
+
+spring:
+  ai:
+    openai:
+      base-url: http://127.0.0.1:8771
+      api-key: ${spring.ai.agent.api-key}
+      chat:
+        options:
+          model: gpt-4.1-mini
+      embedding:
+        options:
+          model: text-embedding-ada-002
+
+    # 个人配置，通过 http://127.0.0.1:8090 代理出去
+    agent:
+      base-url: https://api.jasonlat.com
+      api-key: xxx
+
+# 日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
